@@ -23,6 +23,7 @@ app.use(morgan('dev'));
 
 const Schema = mongoose.Schema;
 
+
 const blogSchema = new Schema({
   title: {
     type: String,
@@ -137,23 +138,4 @@ app.get('/blogs/:id/edit', (req, res) => {
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, '/views/404.html'));
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
