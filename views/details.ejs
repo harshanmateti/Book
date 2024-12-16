@@ -1,0 +1,75 @@
+ <html lang="en">
+<head>
+  <title>DIMPU</title>
+  <link rel="stylesheet" href="/styles.css?v=1.1">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<body>
+  <nav>
+    <div class="site-title">
+      <a href="/">
+        <h1>Abhilash</h1>
+      </a>
+      <p>KMIT Book Site</p>
+    </div>
+    <ul>
+      <li><a href="/">Book</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/blogs/create">Add New Book</a></li>
+    </ul>
+  </nav>
+
+  <div class="details content">
+    <h2><%= blog.title %></h2>
+    <div class="content">
+      <p><%= blog.body %></p>
+    </div>
+    <br>
+    <br>
+    <a href="/blogs/<%= blog._id %>/edit" class="update">
+      <button style="background: crimson; color: white; padding: 6px; border: 0; font-size: 1.2em; cursor: pointer;">Update</button>
+    </a>
+
+    <a class="delete" data-doc="<%= blog._id %>">
+      <img src="/trashcan.svg" alt="delete icon">
+    </a>
+
+   
+  </div>
+
+<footer>
+  Copyright &copy; Abhilash 2024 @
+</footer>
+
+  <script>
+    
+    
+    const trashcan = document.querySelector('a.delete');
+
+    trashcan.addEventListener('click', (e) => {
+      const endpoint = `/blogs/${trashcan.dataset.doc}`;
+
+      fetch(endpoint, {
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(data => window.location.href = data.redirect)
+      .catch(err => console.log(err));
+    });
+    
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

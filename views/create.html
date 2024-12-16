@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+  <title>DIMPU</title>
+  <link rel="stylesheet" href="/styles.css?v=1.1">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<body>
+  <nav>
+    <div class="site-title">
+      <a href="/">
+        <h1>Abhilash</h1>
+      </a>
+      <p>KMIT Book Site</p>
+    </div>
+    <ul>
+      <li><a href="/">Book</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/blogs/create">Add New Book</a></li>
+    </ul>
+  </nav>
+
+  <div class="create-blog content">
+    <form action="/blogs" method="POST">
+      <label for="title">Book title:</label>
+      <input type="text" id="title" name="title" required>
+      <label for="snippet">Book subtitle:</label>
+      <input type="text" id="snippet" name="snippet" required>
+      <label for="body">Book Content:</label>
+      <textarea id="body" name="body" required></textarea>
+      <button>ADD BOOK</button>
+    </form>
+  </div>
+
+  <footer>
+    Copyright &copy; Abhilash 2024 @
+  </footer>
+</body>
+</html>
